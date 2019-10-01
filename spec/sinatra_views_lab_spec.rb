@@ -5,11 +5,11 @@ describe App do
       get '/hello'
     end
 
-    it 'sends a 200 status code' do
+    xit 'sends a 200 status code' do
       expect(last_response.status).to eq(200)
     end
 
-    it 'renders a template called "hello.erb" ' do
+    xit 'renders a template called "hello.erb" ' do
       expect(last_response.body).to eq(File.read("views/hello.erb"))
     end
   end
@@ -19,11 +19,11 @@ describe App do
       get '/goodbye'
     end
 
-    it 'sends a 200 status code' do
+    xit 'sends a 200 status code' do
       expect(last_response.status).to eq(200)
     end
 
-    it 'renders a template called "goodbye.erb" ' do
+    xit 'renders a template called "goodbye.erb" ' do
       expect(last_response.body).to include("Goodbye Joe")
     end
   end
@@ -32,15 +32,15 @@ describe App do
       get '/date'
     end
 
-    it 'sends a 200 status code' do
+    xit 'sends a 200 status code' do
       expect(last_response.status).to eq(200)
     end
 
-    it 'renders a template called "date.erb" ' do
+    xit 'renders a template called "date.erb" ' do
       expect(last_response.body).to include("The date is")
     end
 
-    it 'includes the current date and time' do
+    xit 'includes the current date and time' do
       if last_response.status == 200
         expect(last_response.body).to include(Date.today.strftime("%A, %B %d, %Y"))
       elsif last_response.status = 404
